@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShittierReddit</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='../css/threadsHome.css' />
+  </head>
+  <body> <script src="../js/threadsHome.js"></script>
+      <div class="header">
+        <div class="inner-header">
+          <div class="logo">
+            <h1>SHITTIER<span>REDDIT</span></h1>
+          </div>
+          <ul class = "navigation">
+            <a href="../home"><li>Home</li></a>
+            <a href="../threadsHome"><li>Threads</li></a>
+            <a href="../register"><li>Create Account</li></a>
+            <a href="../login"><li>Login</li></a>
+          </ul>
+        </div>
+      </div>
+      <div class="body-parent">
+        <form id="create-thread-button" action="../createThread">
+          <button type="submit" name="submit-button" id="submitButton">Create Thread</button>
+        </form>
+      </div>
+      <section id='thread-area'>
+        <div class='thread-list-body'>
+          <ul id='thread-list'>
+          </ul>
+        </div>
+      </section>
+
+      <template id='thread-item-template'>
+              <li class='thread-item'>
+                      <span class='thread-item-title'>Lorem Ipsum</span>
+              </li>
+      </template>
+  </body>
+</html>

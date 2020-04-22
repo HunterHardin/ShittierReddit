@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShittierReddit</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='../css/threadsCreation.css' />
+  </head>
+  <body> <script src="../js/threadsCreation.js"></script>
+      <div class="header">
+        <div class="inner-header">
+          <div class="logo">
+            <h1>SHITTIER<span>REDDIT</span></h1>
+          </div>
+          <ul class = "navigation">
+            <a href="../home"><li>Home</li></a>
+            <a href="../threadsHome"><li>Threads</li></a>
+            <a href="../register"><li>Create Account</li></a>
+            <a href="../login"><li>Login</li></a>
+          </ul>
+        </div>
+      </div>
+      <div class="thread-creation-parent">
+        <form id="thread-creation-form">
+            <input type="text" id="thread-title" name="thread-title" class="thread-title" maxlength="100" placeholder="Enter Thread Summary.">
+            <textarea id="thread-content" name="thread-content" class="thread-content" placeholder="Enter Thread Content" maxlength="5000"></textarea>
+            <button type="submit" name="submit-button" id="submitButton">Create Thread</button>
+        </form>
+      </div>
+  </body>
+</html>

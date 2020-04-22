@@ -1,0 +1,118 @@
+*{     
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* html,body {
+    height: 100%;
+  } */
+  .header{
+    display: block;
+    height: 80px;
+    width: 100%;
+    background-color: black;
+  }
+  
+  .inner-header{
+    width: 1200px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  body {
+    background-color: lightgray;
+      font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  } 
+  
+  .logo{
+    height: 100%;
+    display: table;
+    float: left;
+  }
+  
+  .logo h1{
+    color: orange;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Indie Flower', cursive;
+    font-size: 32px;
+    font-weight: 200;
+  }
+  
+  .logo h1 span{
+    font-size: 40px;
+    font-weight: 800;
+  }
+  
+  .navigation{
+    float: right;
+    height: 100%;
+  }
+  
+  .navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+    text-decoration: none;
+  }
+  
+  .navigation a li:hover{
+      color: white;
+    }
+  
+  .navigation a:last-child{
+    padding-right: 0;
+  }
+  
+  .navigation a li{
+    display: table-cell;
+    vertical-align: middle;
+    color: orange;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px
+  }
+  
+  .content-body {
+      width: 70%;
+      height: 300px;
+      display: block;
+      margin: 0 auto;
+      background-color: white;
+  }
+  
+  .register-body {
+      width: 60%;
+      height: 80%;
+      display: block;
+      margin: 0 auto;
+      background-color: white;
+      border: 3px ridge lightgrey;
+      text-align: center;
+  }
+  
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+  
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+}
+    
+button:hover {
+    opacity: 0.8;
+}
+  

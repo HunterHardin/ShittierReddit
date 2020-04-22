@@ -1,0 +1,124 @@
+*{     
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* html,body {
+    height: 100%;
+  } */
+  .header{
+    display: block;
+    height: 80px;
+    width: 100%;
+    background-color: black;
+  }
+
+  .body-parent{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .inner-header{
+    width: 1200px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  body {
+    background-color: lightgray;
+      font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  } 
+  
+  .logo{
+    height: 100%;
+    display: table;
+    float: left;
+  }
+  
+  .logo h1{
+    color: orange;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Indie Flower', cursive;
+    font-size: 32px;
+    font-weight: 200;
+  }
+  
+  .logo h1 span{
+    font-size: 40px;
+    font-weight: 800;
+  }
+  
+  .navigation{
+    float: right;
+    height: 100%;
+  }
+  
+  .navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+    text-decoration: none;
+  }
+  
+  .navigation a li:hover{
+    color: white;
+  }
+  
+  .navigation a:last-child{
+    padding-right: 0;
+  }
+  
+  .navigation a li{
+    display: table-cell;
+    vertical-align: middle;
+    color: orange;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px
+  }
+
+.thread-creation-parent {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.thread-title {
+    width: 100%;
+    background-color: darkorange;
+    border: 2px ridge black;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.thread-content {
+    height: 500px;
+    width: 100%;
+    background-color: darkorange;
+    border: 2px ridge black;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+button {
+    background-color: darkorange;
+    padding: 10px;
+    border: 2px ridge black;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
