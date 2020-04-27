@@ -1,8 +1,9 @@
 "use strict";
-
+console.log('Test1');
 document.querySelector("body").onload = main;
 
 function main () {
+    console.log('Test2');
     document.getElementById("login-form").onsubmit = (event) => {
         event.preventDefault();
         processForm(event);
@@ -15,6 +16,7 @@ function processForm (event) {
     const password = document.getElementById("password").value;
 
     const data = {username, password};
+    console.log(data);
     fetch("http://52.162.249.144/login", {
         method: "post",
         body: JSON.stringify(data),

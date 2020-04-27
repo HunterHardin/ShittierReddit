@@ -25,6 +25,11 @@ class ThreadsModel {
             'SELECT title FROM threads'
         );
     }
+
+    async getID (title) {
+        const sql = `SELECT id FROM threads WHERE title=?`;
+        return this.DAO.get(sql, [title]);
+    }
 }
   
 module.exports = ThreadsModel;

@@ -81,7 +81,7 @@
     font-size: 16px
   }
 
-button {
+.submit-button {
   display: inline-block;
   background-color: darkorange;
   padding: 10px;
@@ -91,6 +91,15 @@ button {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.thread-item-title {
+  display: inline-block;
+  background-color: darkorange;
+  border: none;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 button:hover {

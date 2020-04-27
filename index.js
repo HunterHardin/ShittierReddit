@@ -108,6 +108,10 @@ app.get("/thread_items", (req, res) => {
         })
 });
 
+app.get("/threads", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/html/threads.html'));
+});
+
 
 // Listen on port 80 (Default HTTP port)
 app.listen(80, async () => {

@@ -7,6 +7,14 @@ document.querySelector("body").onload = main;
 
 function main() {
     getThreadItems();
+    console.log("Test1");
+    document.getElementById("thread-item-title-button").onclick = (event) => {
+        console.log("Test2");
+        event.preventDefault();
+        doSomething(event);
+        console.log("Test3");
+        return false;
+    };
 }
 
 function render() {
@@ -37,4 +45,8 @@ function getThreadItems () {
     }).catch( err => {
         console.log(err);
     });
+}
+
+function doSomething (event) {
+    console.log("Test4");
 }
