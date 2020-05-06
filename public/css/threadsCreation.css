@@ -92,7 +92,7 @@
     background-color: darkorange;
     border: 2px ridge black;
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -103,8 +103,8 @@
     width: 100%;
     background-color: darkorange;
     border: 2px ridge black;
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
+    font-family: sans-serif;
+    font-size: 15px;
     padding: 10px;
     margin-bottom: 10px;
     resize: none;

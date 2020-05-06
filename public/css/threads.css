@@ -74,3 +74,81 @@
     font-family: 'Indie Flower', cursive;
     font-size: 16px
   }
+
+  .thread-area {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.thread-title-body {
+  width: 100%;
+  background-color: darkorange;
+  border: 2px ridge black;
+  border-bottom: 1px ridge black;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.thread-content-body {
+  width: 100%;
+  background-color: darkorange;
+  border: 2px ridge black;
+  border-top: 0;
+  font-family: sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-list-area {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.comment-item{
+  width: 100%;
+  list-style-type: none;
+  background-color: darkorange;
+  padding: 10px;
+  border: 2px ridge black;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.move-right {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.thread-comment {
+  display: block;
+  margin: 0 auto;
+  height: 250px;
+  width: 100%;
+  background-color: darkorange;
+  border: 2px ridge black;
+  font-family: sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+button {
+  background-color: darkorange;
+  padding: 10px;
+  border: 2px ridge black;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}

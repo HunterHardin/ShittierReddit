@@ -4,9 +4,8 @@ document.querySelector("body").onload = main;
 function main () {
     document.getElementById("register-form").onsubmit = (event) => {
         event.preventDefault();
-
         processForm(event);
-
+        //window.location.href = "http://52.162.249.144/login";
         return false;
     };
 }
@@ -25,10 +24,14 @@ function processForm (event) {
         method: "post",
         body: JSON.stringify(data),
         headers: {"Content-Type": "application/json"}
-    }).then( res => {
-        return res.json();
-    }).then( data => {
-        console.log(data);
+    }).then( async res => {
+        if (res.status === 200) {
+            alert('Account Created');
+        } else if (res.status === 409) {
+            alert('Username exists');
+        } else {
+            window.location = '/home';
+        }
     }).catch( err => {
         console.log(err);
     });

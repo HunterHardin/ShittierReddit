@@ -8,7 +8,7 @@ class ThreadsModel {
             CREATE TABLE IF NOT EXISTS threads (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT,
-            content Text
+            content TEXT
         )`
         return await this.DAO.run(sql)
     }
@@ -22,14 +22,17 @@ class ThreadsModel {
     
     async getAll () {
         return await this.DAO.all(
-            'SELECT title FROM threads'
+            'SELECT title, id, content FROM threads'
         );
     }
 
-    async getID (title) {
-        const sql = `SELECT id FROM threads WHERE title=?`;
-        return this.DAO.get(sql, [title]);
+    async getThread(id) {
+        return await this.DAO.get(
+            'SELECT title, content FROM threads WHERE id=?',
+            [id]
+        );
     }
+
 }
-  
+ 
 module.exports = ThreadsModel;

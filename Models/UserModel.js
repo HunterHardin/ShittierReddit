@@ -1,28 +1,38 @@
+const uuidV4 = require('uuid').v4;
+
 class UserModel {
     constructor (DAO) {
         this.DAO = DAO
     }
   
-    createTable () {
+    async createTable () {
         const sql = `
             CREATE TABLE IF NOT EXISTS Users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT PRIMARY KEY,
             username TEXT UNIQUE,
             passwordHash TEXT
         )`
-        return this.DAO.run(sql)
+        return await this.DAO.run(sql)
+    }
+
+    async getUserID (username) {
+        const sql = `SELECT uuid from Users WHERE username=?`;
+        return await this.DAO.get(sql, [username]);
+    }
+
+    async getPasswordHash (username) {
+        return await this.DAO.get(
+            'select passwordHash from Users where username=?', 
+            [username]
+        );
     }
 
     async addUser (username, passwordHash) {
-        const sql = `INSERT INTO Users (username, passwordHash) VALUES (?, ?)`;
+        const sql = `INSERT INTO Users (uuid, username, passwordHash) VALUES (?, ?, ?)`;
         // Username needs to be unique so this will throw an exception if we 
         // attempt to add a user that already exists
-        await this.DAO.run(sql, [username, passwordHash]);
-    }
-
-    getPasswordHash(username) {
-        const sql = `SELECT passwordHash FROM Users WHERE username=?`;
-        return this.DAO.get(sql, [username]);
+        const uuid = uuidV4();
+        await this.DAO.run(sql, [uuid, username, passwordHash]);
     }
 }
 

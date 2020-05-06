@@ -6,7 +6,7 @@ function main () {
         event.preventDefault();
 
         processForm(event);
-
+        //window.location.href = "http://52.162.249.144/threadsHome";
         return false;
     };
 }

@@ -19,8 +19,36 @@
           </ul>
         </div>
       </div>
-      <div>
-        <input type="text" name='comment' id='comment' maxlength="280">
-      </div>
-  </body>
+      <section class='thread-area' id='thread-area'>
+        <div class='thread-title-body'>
+          <p id='thread-title'></p>
+        </div>
+        <div class='thread-content-body'>
+          <p id='thread-content'></p>
+        </div>
+        <div id='comment-list-area'>
+          <ul id='comment-list'>
+          </ul>
+        </div>
+        <form id="thread-comment-form">
+          <div class='move-right'>
+            <textarea id="thread-comment" name="thread-comment" class="thread-comment" placeholder="Enter Comment" maxlength="3000"></textarea>
+            <button type="submit" name="submit-button" id="submitButton">Create Comment</button>
+          </div>    
+        </form>
+      </section>
+
+      <template id='comment-item-template'>
+        <li class='comment-item'>
+          <span class='comment-item-text'>Lorem Ipsum</span>
+        </li>
+      </template>
+
+      <!-- <template id='thread-item-template'>
+              <li class='thread-item'>
+                <span class='thread-item-title'>Lorem Ipsum</span>
+                <span class='thread-item-content'>Lorem Ipsum</span>
+              </li>
+      </template> -->
+      
 </html>

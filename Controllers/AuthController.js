@@ -8,7 +8,7 @@ class AuthController {
 
     async register (username, password) {
         const passwordHash = await this.hashPassword(password);
-        this.UserModel.addUser(username, passwordHash);
+        await this.UserModel.addUser(username, passwordHash);
     }
 
     async hashPassword (password) {
@@ -24,10 +24,11 @@ class AuthController {
     
     async login (username, password) {
         const passwordHash = await this.UserModel.getPasswordHash(username);
-        if (passwordHash === undefined) 
-            return false
-        const isVerified = await this.verifyPassword(passwordHash.passwordHash, password);
-        return isVerified;
+        if (passwordHash === undefined) {
+            return false;
+        } else {
+            return await this.verifyPassword(passwordHash.passwordHash, password);
+        }
     }
 
     async verifyPassword (passwordHash, password) {
