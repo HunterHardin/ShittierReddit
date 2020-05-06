@@ -7,7 +7,6 @@ document.querySelector("body").onload = main;
 
 function main() {
     getThreadItems();
-    console.log(sessionStorage.getItem('isVerified'));
 }
 
 function doSomething (event, i) {
@@ -51,17 +50,4 @@ function getThreadItems () {
     }).catch( err => {
         console.log(err);
     });
-}
-
-async function getLoginStatus (isVerified) {
-    const res = await fetch('http://65.52.233.112/loginStatus', {
-        method: 'get'
-    });
-    if (res.status === 200) {
-        isVerified = true;
-    } else if (res.status === 401) {
-        isVerified = false;
-    } else {
-        window.location = '/home';
-    }
 }

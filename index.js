@@ -182,7 +182,6 @@ app.post("/login", errorHandler(async (req, res) => {
     const status = isVerified ? 200 : 401;
     req.session.isVerified = isVerified;
     if (isVerified) {
-        sessionStorage.setItem('isVerified', true);
         req.session.username = username;
         req.session.uuid = await UserController.getUserID(username);
     }
@@ -206,7 +205,7 @@ app.post("/createThread", async (req, res) => {
     if (body === undefined) {
         return res.sendStatus(400);
     }
-    Threads.add(body.title, body.content)
+    Threads.add(body.title, body.content, req.session.username)
         .then( () => {
             res.sendStatus(200);
         }).catch( err => {
