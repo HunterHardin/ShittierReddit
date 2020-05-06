@@ -1,7 +1,17 @@
 "use strict";
+const id = _id => document.getElementById(_id);
 document.querySelector("body").onload = main;
 
 function main () {
+    const isVerifiedStr = localStorage.getItem("isVerified");
+    if (isVerifiedStr) {
+        const isVerified = JSON.parse(isVerifiedStr);
+        const now = new Date;
+        if (now.getTime() < isVerified.expiry + (12 * 60 * 60 * 1000))
+            renderVerifiedPage();
+        else 
+            logout();
+    }
     document.getElementById("register-form").onsubmit = (event) => {
         event.preventDefault();
         processForm(event);
@@ -10,6 +20,27 @@ function main () {
     };
 }
 
+function renderVerifiedPage() {
+    let link = id('loginLink');
+    link.innerHTML = "Logout";
+    link.removeAttribute("href");
+    link.setAttribute("onclick", "logout()");
+    link.onclick = function() { logout() };
+}
+
+function logout() {
+    localStorage.removeItem('isVerified');
+    fetch("http://52.162.249.144/logout", {
+        method: "get"
+    }).then( async res => {
+        if (res.status === 200) {
+            alert('Successfully Logged Out');
+            window.location = '/home';
+        }
+    }).catch( err => {
+        console.log(err);
+    });
+}
 function processForm (event) {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;

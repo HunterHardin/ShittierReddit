@@ -1,14 +1,51 @@
 "use strict";
+const id = _id => document.getElementById(_id);
 document.querySelector("body").onload = main;
 
 function main () {
-    document.getElementById("thread-creation-form").onsubmit = (event) => {
+    const isVerifiedStr = localStorage.getItem("isVerified");
+    let isVerified;
+    if (isVerifiedStr) {
+        isVerified = JSON.parse(isVerifiedStr);
+        const now = new Date;
+        if (now.getTime() < isVerified.expiry + (12 * 60 * 60 * 1000))
+            renderVerifiedPage();
+        else 
+            logout();
+    }
+    document.getElementById("thread-creation-form").onsubmit = (event, isVerified) => {
         event.preventDefault();
-
+        if (!isVerifiedStr){
+            alert('Must Be Logged In To Create Threads');
+            window.location.href = "http://52.162.249.144/login";
+            return false;
+        }
         processForm(event);
-        //window.location.href = "http://52.162.249.144/threadsHome";
+        window.location.href = "http://52.162.249.144/threadsHome";
         return false;
     };
+}
+
+function renderVerifiedPage() {
+    let link = id('loginLink');
+    link.innerHTML = "Logout";
+    link.removeAttribute("href");
+    link.setAttribute("onclick", "logout()");
+    link.onclick = function() { logout() };
+}
+
+function logout() {
+    localStorage.removeItem('isVerified');
+    fetch("http://52.162.249.144/logout", {
+        method: "get"
+    }).then( async res => {
+        if (res.status === 200) {
+            alert('Successfully Logged Out');
+            window.location = '/home';
+        }
+    }).catch( err => {
+        console.log(err);
+    });
 }
 
 async function processForm (event) {

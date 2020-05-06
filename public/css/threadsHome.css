@@ -70,7 +70,21 @@
   }
   
   .navigation a:last-child{
+    margin-top: 27px;
+    color: orange;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
     padding-right: 0;
+  }
+
+  .navigation a:last-child li {
+    display: table-cell;
+    vertical-align: 0;
+  }
+
+  .navigation a:last-child:hover {
+    color: white;
+    cursor: pointer;
   }
   
   .navigation a li{
@@ -78,7 +92,7 @@
     vertical-align: middle;
     color: orange;
     font-family: 'Indie Flower', cursive;
-    font-size: 16px
+    font-size: 16px;
   }
 
 .submit-button {
@@ -91,6 +105,7 @@
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 150px;
 }
 
 .thread-item-title {

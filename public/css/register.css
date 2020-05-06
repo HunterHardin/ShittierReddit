@@ -64,7 +64,21 @@
     }
   
   .navigation a:last-child{
+    margin-top: 27px;
+    color: orange;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
     padding-right: 0;
+  }
+
+  .navigation a:last-child li {
+    display: table-cell;
+    vertical-align: 0;
+  }
+
+  .navigation a:last-child:hover {
+    color: white;
+    cursor: pointer;
   }
   
   .navigation a li{
@@ -76,13 +90,11 @@
   }
   
   .content-body {
-      width: 70%;
-      height: 300px;
-      display: block;
-      margin: 0 auto;
-      background-color: white;
+    display: block;
+    width: 40%;
+    margin: 0 auto;
   }
-  
+  /*
   .register-body {
       width: 60%;
       height: 80%;
@@ -92,27 +104,33 @@
       border: 3px ridge lightgrey;
       text-align: center;
   }
+  */
+  input {
+    width: 100%;
+    background-color: darkorange;
+    border: 2px ridge black;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
   
-input[type=text], input[type=password] {
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+  .username {
+    margin-top: 10px;
+  }
   
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
+  button {
+    background-color: darkorange;
+    padding: 10px;
+    border: 2px ridge black;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
     cursor: pointer;
-    width: 80%;
-}
-    
-button:hover {
+    width: 150px;
+    margin: 0 auto;
+  }
+  
+  button:hover {
     opacity: 0.8;
-}
+  }
   
