@@ -113,10 +113,10 @@
   width: 100%;
   list-style-type: none;
   background-color: darkorange;
-  padding: 10px;
   border: 2px ridge black;
   font-family: sans-serif;
   font-size: 15px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 
@@ -136,9 +136,18 @@
   font-family: sans-serif;
   font-size: 15px;
   padding: 10px;
+  padding-top: 5px;
   margin-bottom: 10px;
   resize: none;
 }
+
+.comment-creator {
+  display: block;
+  font-size: 10px;
+
+  border-bottom: 1px ridge black;
+}
+
 
 button {
   background-color: darkorange;

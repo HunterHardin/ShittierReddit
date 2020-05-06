@@ -22,7 +22,7 @@ function render() {
     for (let i = 0; i < local_items.length; ++i) {
         let new_li = document.importNode(template.content, true);
         const button = new_li.querySelector('.thread-item-title');
-        button.textContent = local_items[i].title;
+        button.textContent = local_items[i].title + " by " + local_items[i].username;
         button.setAttribute('id', local_items[i].id);
         list_elt.appendChild(new_li);
     }

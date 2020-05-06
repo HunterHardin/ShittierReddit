@@ -21,7 +21,7 @@ function main() {
 function render(threadID) {
     let title = id('thread-title');
     let content = id('thread-content');
-    title.innerHTML = local_item.title;
+    title.innerHTML = local_item.title + " by " + local_item.username;
     content.innerHTML = local_item.content;
     
     console.log(local_comments[0].comment);
@@ -30,6 +30,7 @@ function render(threadID) {
     list_elt.innerHTML = '';
     for (let i = 0; i < local_comments.length; ++i) {
         let new_li = document.importNode(template.content, true);
+        new_li.querySelector('.comment-creator').textContent = local_comments[i].username;
         new_li.querySelector('.comment-item-text').textContent = local_comments[i].comment;
         list_elt.appendChild(new_li);
     }

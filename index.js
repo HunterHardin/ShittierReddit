@@ -269,7 +269,7 @@ app.post("/createComment", async (req, res) => {
     if (body === undefined) {
         return res.sendStatus(400);
     }
-    Comments.add(body.threadID, body.comment)
+    Comments.add(body.threadID, body.comment, req.session.username)
         .then( () => {
             res.sendStatus(200);
         }).catch( err => {
