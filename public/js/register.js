@@ -35,7 +35,7 @@ function logout() {
     }).then( async res => {
         if (res.status === 200) {
             alert('Successfully Logged Out');
-            window.location = '/home';
+            window.location = '/threadsHome';
         }
     }).catch( err => {
         console.log(err);
@@ -61,7 +61,7 @@ function processForm (event) {
         } else if (res.status === 409) {
             alert('Username exists');
         } else {
-            window.location = '/home';
+            window.location = '/threadsHome';
         }
     }).catch( err => {
         console.log(err);

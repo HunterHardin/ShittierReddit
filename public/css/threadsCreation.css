@@ -25,7 +25,7 @@
     display: block;
     margin: 0 auto;
   }
-  
+
   body {
     background-color: lightgray;
       font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -70,7 +70,7 @@
   }
 
   .navigation a:last-child{
-    margin-top: 27px;
+    margin-top: 28px;
     color: orange;
     font-family: 'Indie Flower', cursive;
     font-size: 16px;
@@ -83,6 +83,24 @@
   }
 
   .navigation a:last-child:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  .accountLink{
+    margin-top: 28px;
+    color: orange;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    padding-right: 0;
+  }
+
+  .accountLink li {
+    display: table-cell;
+    vertical-align: 0;
+  }
+
+  .accountLink:hover {
     color: white;
     cursor: pointer;
   }

@@ -38,7 +38,7 @@
   }
   
   .logo h1{
-    color: orange;
+    color: darkorange;
     height: 100%;
     display: table-cell;
     vertical-align: middle;
@@ -71,7 +71,7 @@
   
   .navigation a:last-child{
     margin-top: 28px;
-    color: orange;
+    color: darkorange;
     font-family: 'Indie Flower', cursive;
     font-size: 16px;
     padding-right: 0;
@@ -89,21 +89,16 @@
 
   .accountLink{
     margin-top: 28px;
-    color: orange;
+    color: darkorange;
     font-family: 'Indie Flower', cursive;
     font-size: 16px;
     padding-right: 0;
   }
 
-  .accountLink  {
+  .accountLink li {
     display: table-cell;
     vertical-align: 0;
   }
-
-.navigation *:not(:first-child):not(:last-child) {
-  display: table-cell;
-  vertical-align: 0;
-}
 
   .accountLink:hover {
     color: white;
@@ -113,27 +108,14 @@
   .navigation a li{
     display: table-cell;
     vertical-align: middle;
-    color: orange;
+    color: darkorange;
     font-family: 'Indie Flower', cursive;
     font-size: 16px;
   }
 
-.submit-button {
-  display: inline-block;
-  background-color: darkorange;
-  padding: 10px;
-  border: 2px ridge black;
-  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 150px;
-}
-
 .thread-item-title {
   display: inline-block;
-  background-color: darkorange;
+  background-color:darkorange;
   border: none;
   font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 20px;
@@ -158,3 +140,33 @@ button:hover {
   font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 20px;
 }
+
+.no-item{
+    list-style-type: none;
+    background-color: darkorange;
+    padding: 10px;
+    border: 2px ridge black;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+.personal-threads{
+    display: table;
+    height: 30px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: darkorange;
+    border: 2px ridge black;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+.personal-threads h1 {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+  }

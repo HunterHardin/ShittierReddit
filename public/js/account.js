@@ -45,7 +45,7 @@ function logout() {
 }
 
 function doSomething (event, i) {
-    console.log(i);
+
     localStorage.setItem("threadID", i);
     window.location.href = "http://52.162.249.144/threads";
 }
@@ -54,16 +54,32 @@ function render() {
     const template = id('thread-item-template');
     let list_elt = id('thread-list');
     list_elt.innerHTML = '';
+    let numThreads = false;
+    const username = localStorage.getItem('username');
     for (let i = 0; i < local_items.length; ++i) {
-        let new_li = document.importNode(template.content, true);
-        const button = new_li.querySelector('.thread-item-title');
-        button.textContent = local_items[i].title + " by " + local_items[i].username;
-        button.setAttribute('id', local_items[i].id);
+        if (username === local_items[i].username) {
+            numThreads = true;
+            let new_li = document.importNode(template.content, true);
+            const button = new_li.querySelector('.thread-item-title');
+            button.textContent = local_items[i].title + " by " + local_items[i].username;
+            button.setAttribute('id', local_items[i].id);
+            list_elt.appendChild(new_li);
+        }
+    }
+
+    if (!numThreads) {
+        const templateEmpty = id('no-item-template')
+        let new_li = document.importNode(templateEmpty.content, true);
+        const text = new_li.querySelector('.no-items');
+        text.textContent = "You have not created any threads...";
         list_elt.appendChild(new_li);
     }
-    for (let i = 1; i <= local_items.length; ++i) {
-        document.getElementById(i).onclick = event => {
-            doSomething(event, i);
+
+    for (let i = 0; i < local_items.length; ++i) {
+        if (username === local_items[i].username){
+            document.getElementById(i+1).onclick = event => {
+                doSomething(event, i+1);
+            }
         }
     }
 }

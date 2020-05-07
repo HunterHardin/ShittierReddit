@@ -32,21 +32,25 @@ function main() {
 }
 
 function renderVerifiedPage() {
-    let link = id('loginLink');
-    link.innerHTML = "Logout";
-    link.removeAttribute("href");
-    link.setAttribute("onclick", "logout()");
-    link.onclick = function() { logout() };
+    let loginLink = id('loginLink');
+    let accountLink = id('accountLink');
+    loginLink.innerHTML = "Logout";
+    loginLink.removeAttribute("href");
+    loginLink.setAttribute("onclick", "logout()");
+    accountLink.innerHTML = "Account";
+    accountLink.setAttribute("href", "../account");
+    loginLink.onclick = function() { logout() };
 }
 
 function logout() {
     localStorage.removeItem('isVerified');
+    localStorage.removeItem('username');
     fetch("http://52.162.249.144/logout", {
         method: "get"
     }).then( async res => {
         if (res.status === 200) {
             alert('Successfully Logged Out');
-            window.location = '/home';
+            window.location = '/threadsHome';
         }
     }).catch( err => {
         console.log(err);

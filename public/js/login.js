@@ -6,7 +6,6 @@ function main () {
     document.getElementById("login-form").onsubmit = (event) => {
         event.preventDefault();
         processForm(event);
-        //window.location.href = "http://52.162.249.144/home";
         return false;
     };
 }
@@ -24,17 +23,18 @@ async function processForm (event) {
     });
 
     if (res.status === 200) {
-        alert('Login successful');
         const now = new Date;
         const item = {
             value: true,
             expiry: now.getTime()
         }
         localStorage.setItem('isVerified', JSON.stringify(item));
+        localStorage.setItem('username', username);
+        alert('Login successful');
         window.location.href = "http://52.162.249.144/threadsHome";
     } else if (res.status === 401) {
         alert('Incorrect username/password');
     } else {
-        window.location = '/home';
+        window.location = '/threadsHome';
     }
 }

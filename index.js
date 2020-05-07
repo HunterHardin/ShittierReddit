@@ -126,11 +126,7 @@ app.delete('/account/:userID/user', (req, res) => {
 // Default route
 app.get('/', (req, res) => {
     console.log(req.ip);
-    res.redirect('/home');
-});
-
-app.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/html/project.html'));
+    res.redirect('/threadsHome');
 });
 
 app.get("/logout", (req, res) => {
@@ -139,7 +135,11 @@ app.get("/logout", (req, res) => {
 });
 
 app.get("/register", errorHandler(async (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "html", "register.html"));
+    if (req.session.isVerified) {
+        res.redirect("/threadsHome");
+    } else {
+        res.sendFile(path.join(__dirname, "public", "html", "register.html"));
+    }
 }));
 
 app.post("/register", errorHandler(async (req, res) => {
@@ -165,7 +165,7 @@ app.post("/register", errorHandler(async (req, res) => {
 
 app.get("/login", errorHandler(async (req, res) => {
     if (req.session.isVerified) {
-        res.redirect("/home");
+        res.redirect("/threadsHome");
     } else {
         res.sendFile(path.join(__dirname, "public", "html", "login.html"));
     }
@@ -278,6 +278,14 @@ app.post("/createComment", async (req, res) => {
         });
 });
 
+app.get("/account", (req, res) => {
+    if (req.session.isVerified) {
+        res.sendFile(path.join(__dirname, '/public/html/account.html'));
+    } else {
+        res.redirect('/threadsHome')
+    }
+});
+
 // Listen on port 80 (Default HTTP port)
 app.listen(80, async () => {
     // wait until the db is initialized and all models are initialized
@@ -302,7 +310,7 @@ async function initDB () {
 app.use(function (err, req, res, next) {
     console.error(err.stack)
     logger.error(err);
-    res.redirect('/home');
+    res.redirect('/threadsHome');
 });
 
 // We just use this to catch any error in our routes so they hit our default
